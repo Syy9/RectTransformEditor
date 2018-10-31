@@ -13,12 +13,13 @@ namespace RectTransformEditor
     {
         protected override UnityProvideEditorType EditorType { get { return UnityProvideEditorType.RectTransformEditor; } }
 
-        RectTransform[] Targets;
+        RectTransform[] _targets;
         protected override void OnEnable()
         {
             base.OnEnable();
-            Targets = targets.Cast<RectTransform>().ToArray();
+            _targets = targets.Cast<RectTransform>().ToArray();
         }
+
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
@@ -26,8 +27,8 @@ namespace RectTransformEditor
             {
                 if (GUILayout.Button("Round Point", GUILayout.Width(100)))
                 {
-                    Undo.RegisterCompleteObjectUndo(Targets, "Round Point");
-                    foreach (var r in Targets)
+                    Undo.RegisterCompleteObjectUndo(_targets, "Round Point");
+                    foreach (var r in _targets)
                     {
                         r.RoundPoint();
                     }
@@ -36,7 +37,7 @@ namespace RectTransformEditor
 
                 if (GUILayout.Button("Round Point (with children)", GUILayout.Width(170)))
                 {
-                    foreach (var r in Targets)
+                    foreach (var r in _targets)
                     {
                         var components = r.GetComponentsInChildren<RectTransform>();
                         Undo.RegisterCompleteObjectUndo(components, "Round Point");
