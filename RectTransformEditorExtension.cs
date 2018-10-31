@@ -18,9 +18,9 @@ namespace RectTransformEditor
 
         static Vector2 RoundPoint(Vector2 v)
         {
-            var x = Mathf.Round(v.x);
-            var y = Mathf.Round(v.y);
-            return new Vector2(x, y);
+            v.x = Mathf.Round(v.x);
+            v.y = Mathf.Round(v.y);
+            return v;
         }
     }
 
