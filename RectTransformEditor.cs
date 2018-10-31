@@ -34,7 +34,7 @@ namespace RectTransformEditor
                     AssetDatabase.SaveAssets();
                 }
 
-                if (GUILayout.Button("Round Point(with children)", GUILayout.Width(170)))
+                if (GUILayout.Button("Round Point (with children)", GUILayout.Width(170)))
                 {
                     foreach (var r in Targets)
                     {
