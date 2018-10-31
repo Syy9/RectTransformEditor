@@ -43,7 +43,6 @@ namespace RectTransformEditor
                         Undo.RegisterCompleteObjectUndo(components, "Round Point");
                         foreach (var c in components)
                         {
-                            Debug.Log("c : " + c.name);
                             c.RoundPoint();
                         }
                     }
