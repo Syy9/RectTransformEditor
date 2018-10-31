@@ -23,9 +23,10 @@ namespace RectTransformEditor
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            using (new EditorGUILayout.HorizontalScope())
+            using (new EditorGUILayout.HorizontalScope("box", GUILayout.ExpandWidth(true)))
             {
-                if (GUILayout.Button("Round Point", GUILayout.Width(100)))
+                EditorGUILayout.LabelField("Pos & Size", GUILayout.Width(70));
+                if (GUILayout.Button("Round Point", GUILayout.Width(80)))
                 {
                     Undo.RegisterCompleteObjectUndo(_targets, "Round Point");
                     foreach (var r in _targets)
@@ -35,7 +36,7 @@ namespace RectTransformEditor
                     AssetDatabase.SaveAssets();
                 }
 
-                if (GUILayout.Button("Round Point (with children)", GUILayout.Width(170)))
+                if (GUILayout.Button("Round Point (with children)", GUILayout.Width(160)))
                 {
                     foreach (var r in _targets)
                     {
