@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RectTransformEditor
+namespace Syy.Utility
 {
-
     public static class RectTransformEditorExtension
     {
         public static void RoundPoint(this RectTransform self)
@@ -13,7 +12,6 @@ namespace RectTransformEditor
             self.sizeDelta = RoundPoint(self.sizeDelta);
             self.offsetMax = RoundPoint(self.offsetMax);
             self.offsetMin = RoundPoint(self.offsetMin);
-
         }
 
         static Vector2 RoundPoint(Vector2 v)
@@ -23,6 +21,4 @@ namespace RectTransformEditor
             return v;
         }
     }
-
-
 }

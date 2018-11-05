@@ -1,11 +1,10 @@
 ﻿using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using CustomEditorUtil;
 using UnityEngine;
 using UnityEditor;
 
-namespace RectTransformEditor
+namespace Syy.Utility
 {
     [CustomEditor(typeof(RectTransform))]
     [CanEditMultipleObjects]
@@ -33,7 +32,6 @@ namespace RectTransformEditor
                     {
                         r.RoundPoint();
                     }
-                    AssetDatabase.SaveAssets();
                 }
 
                 if (GUILayout.Button("Round Point (with children)", GUILayout.Width(160)))
@@ -47,11 +45,8 @@ namespace RectTransformEditor
                             c.RoundPoint();
                         }
                     }
-                    AssetDatabase.SaveAssets();
                 }
             }
         }
     }
-
-
 }
