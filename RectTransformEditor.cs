@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using CustomEditorUtil;
 using UnityEngine;
 using UnityEditor;
 
-namespace Syy.Utility
+namespace Syy.Tool
 {
     [CustomEditor(typeof(RectTransform))]
     [CanEditMultipleObjects]
@@ -22,6 +23,7 @@ namespace Syy.Utility
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
+
             using (new EditorGUILayout.HorizontalScope("box", GUILayout.ExpandWidth(true)))
             {
                 EditorGUILayout.LabelField("Pos & Size", GUILayout.Width(70));
